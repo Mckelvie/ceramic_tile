@@ -17,7 +17,7 @@ import AssignmentIndIcon from '@material-ui/icons/AssignmentInd';
 const Dashboard = () => {
     return(
         <Container>
-         <Grid container style={{marginTop: 12}}>
+         <Grid container style={{marginTop: 12, position: 'sticky', top: 0}}>
            <Grid item xs={4}>
              <Card style={{backgroundColor: '#FFD700', marginInline: 8}}>
                <CardActionArea>
@@ -27,7 +27,7 @@ const Dashboard = () => {
                      Количество проданных плит
                    </Typography>
                    <Typography variant="h6">
-                    3800
+                    0
                    </Typography>
                  </CardContent>
                </CardActionArea>
@@ -42,7 +42,7 @@ const Dashboard = () => {
                      Общая выручка
                    </Typography>
                    <Typography  variant="h6">
-                     45860
+                     0
                    </Typography>
                  </CardContent>
                </CardActionArea>
@@ -57,7 +57,7 @@ const Dashboard = () => {
                      Количество заказов
                    </Typography>
                    <Typography  variant="h6">
-                     96
+                     0
                    </Typography>
                  </CardContent>
                </CardActionArea>
