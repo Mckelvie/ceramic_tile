@@ -26,7 +26,63 @@
         "count": 5000
       },
       "price": 500,
-      "image": "https://images.obi.ru/product/RU/415x415/283236_2.jpg"
+      "image": "https://www.tileforlessutah.com/wp-content/uploads/2020/09/PRD-FS-Stars-Blue-Ceramic-Tile-2.jpg"
+    },
+    {
+      "id": "9b1dwb4f-3b7d-4bad-9udd-2b0d3b3drb6d",
+      "name": "Керамическая плитка настенная ВКЗ  ",
+      "description": {
+        "laying_surface": "стена",
+        "design": "однотонный",
+        "laying": "глянцевая",
+        "size": "35х25",
+        "color": "белый",
+        "count": 5000
+      },
+      "price": 500,
+      "image": "https://i.pinimg.com/originals/7e/f9/61/7ef9614eaa07f3b68bd360da078fede7.jpg"
+    },
+    {
+      "id": "9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dcb6d",
+      "name": "Керамогранит Cersanit Gres A100",
+      "description": {
+        "laying_surface": "пол",
+        "design": "однотонный",
+        "laying": "матовая",
+        "size": "30х30",
+        "color": "бежевый",
+        "count": 3000
+      },
+      "price": 300,
+      "image": "https://images.obi.ru/product/RU/415x415/310181_3.jpg"
+    },
+    {
+      "id": "9b1dwb4f-3b7d-4bad-9bdd-2b0d3b3drb6d",
+      "name": "Керамическая плитка настенная ВКЗ  ",
+      "description": {
+        "laying_surface": "стена",
+        "design": "однотонный",
+        "laying": "глянцевая",
+        "size": "35х25",
+        "color": "белый",
+        "count": 5000
+      },
+      "price": 500,
+      "image": "https://www.tileforlessutah.com/wp-content/uploads/2020/09/PRD-FS-Stars-Blue-Ceramic-Tile-2.jpg"
+    },
+    {
+      "id": "9b1dwb4f-3b7d-4bad-9udd-2b0d3b3drb6d",
+      "name": "Керамическая плитка настенная ВКЗ  ",
+      "description": {
+        "laying_surface": "стена",
+        "design": "однотонный",
+        "laying": "глянцевая",
+        "size": "35х25",
+        "color": "белый",
+        "count": 5000
+      },
+      "price": 500,
+      "image": "https://i.pinimg.com/originals/7e/f9/61/7ef9614eaa07f3b68bd360da078fede7.jpg"
     }
   ],
   "orders": [

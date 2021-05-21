@@ -3,6 +3,7 @@ import Dashboard from "./components/Dashboard";
 import Sales from "./components/Sales";
 import {Component} from "react";
 import data from "./data.json";
+import {Container} from "@material-ui/core";
 
 class App extends Component {
     constructor() {
@@ -18,10 +19,10 @@ class App extends Component {
 
     render() {
         return (
-            <div className="App">
+            <Container className="App">
                 <Dashboard/>
                 <Sales warehouse={this.state.warehouse}/>
-            </div>
+            </Container>
         );
     }
 }
