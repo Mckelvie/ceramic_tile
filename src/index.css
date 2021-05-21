@@ -8,3 +8,8 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.tile{
+  display: flex;
+  justify-content: center;
+}
