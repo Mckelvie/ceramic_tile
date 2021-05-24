@@ -5,6 +5,8 @@ import React, {Component} from "react";
 import data from "./data.json";
 import {Button, Container} from "@material-ui/core";
 import SendIcon from "@material-ui/icons/Send";
+import { Route } from 'react-router-dom';
+import Add_product from "./components/Add_product";
 
 class App extends Component {
     constructor() {
@@ -20,34 +22,45 @@ class App extends Component {
 
     render() {
         return (
-            <div>
-                <div className="bg-light">
-                    <Container className="row d-flex mb-1 align-items-center" style={{position: 'sticky', top: 0}}>
+            <div style={{margin: "0 150px"}}>
+                <div className="bg-light py-2 mb-2" style={{borderRadius: "0 0 5px 5px", position: "sticky", top: "0", zIndex: 2, boxShadow: "0 0 15px rgba(0,0,0,0.5)"}}>
+                    <Container className="row d-flex mb-1 align-items-center justify-content-between" style={{position: 'sticky', top: 0}}>
                         <div  className="row align-items-center">
-                            <img className={"mx-5"} style={{width: 100}}
-                                 src={"https://lh3.googleusercontent.com/proxy/1rdkY9Ns7yhEZFM5pNRFWVcKgURyEOXAygZ2Xr6Ki_5X4g1F6MC_7URm07-4FAnz3MpDwVNmYrdXOLQtxoyWjOF7rgtZ4cm9_BDoYLfDKeLjpjaaao-i4HlP2iudL2c"}/>
-                            <h3>Магазин оптовых продаж плит bbj Tile</h3>
+                            <img className={"mx-5"} style={{width: 50,  borderRadius: "50%"}}
+                                 src={"https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Instagram_icon.png/600px-Instagram_icon.png"}/>
+                            <h3>Lorem ipsum dolor</h3>
                         </div>
                         <div className="d-flex row align-items-flex-end">
                             <Button
                                 className="mr-2 ml-2"
                                 variant="contained"
                                 color="primary"
-                                endIcon={<SendIcon/>}
                             >добавить товар</Button>
                             <Button
                                 variant="contained"
                                 color="primary"
-                                endIcon={<SendIcon/>}
                             >История заказов</Button>
                         </div>
                     </Container>
                 </div>
-                <Container className="App" style={{backgroundColor: '#abb2ee', padding: 4, borderRadius: 10}}>
 
-                    <Dashboard/>
-                    <Sales warehouse={this.state.warehouse}/>
+                <Container className="App" style={{backgroundColor: '#eee', padding: 4, borderRadius: 10}}>
+
+                    <Route path='/' exact
+                           render={() =>
+                               <div>
+                                   <Dashboard/>
+                                   <Sales warehouse={this.state.warehouse}/>
+                               </div>}/>
+
+                    <Route path='/admin'
+                           render={() => <Add_product/> }/>
+
                 </Container>
+
+                <div className="bg-light d-flex align-items-center justify-content-center" style={{borderRadius: "5px 5px 0 0", marginTop: 15, height: 100}}>
+                    <h1> © Lorem ipsum dolor</h1>
+                </div>
             </div>
         );
     }
