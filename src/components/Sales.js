@@ -11,18 +11,16 @@ const useStyles = makeStyles({
     }
 });
 
-
 const Tiles = (props) => {
     const classes = useStyles();
     const [state, setState] = useState({
         raised:false,
         shadow:1,
     })
-    debugger
     return (
         <div className="col-3">
             <div className="tile">
-                <Card elevation={5} style={{padding: 8, marginBottom: 24, backgroundColor: '#e0dfdf'}}
+                <Card elevation={5} style={{padding: 8, marginBottom: 24, backgroundColor: '#f8f1f1'}}
                       classes={{root: state.raised ? classes.cardHovered : ""}}
                       onMouseOver={()=>setState({ raised: true, shadow:5})}
                       onMouseOut={()=>setState({ raised:false, shadow:1 })}
@@ -37,7 +35,7 @@ const Tiles = (props) => {
                         <div>Цена за 1 шт: {props.tile.price} сом</div>
                     </div>
                     <div>
-                        <TextField fullWidth size='small' type='number' id="outlined-basic" label="Введите количество" variant="outlined" />
+                        <TextField fullWidth size='small' type='number'  id="outlined-basic" label="Введите количество" variant="outlined" />
                         <Button
                             className={'mt-2'}
                             fullWidth
@@ -51,7 +49,6 @@ const Tiles = (props) => {
         </div>
     )
 }
-
 
 const Sales = (props) => {
     const {warehouse} = props;
