@@ -5,8 +5,9 @@ import React, {Component} from "react";
 import data from "./data.json";
 import {Button, Container} from "@material-ui/core";
 import SendIcon from "@material-ui/icons/Send";
-import { Route } from 'react-router-dom';
+import {NavLink, Route} from 'react-router-dom';
 import Add_product from "./components/Add_product";
+import History from "./components/history";
 
 class App extends Component {
     constructor() {
@@ -31,15 +32,23 @@ class App extends Component {
                             <h3>Lorem ipsum dolor</h3>
                         </div>
                         <div className="d-flex row align-items-flex-end">
-                            <Button
-                                className="mr-2 ml-2"
-                                variant="contained"
-                                color="primary"
-                            >добавить товар</Button>
-                            <Button
-                                variant="contained"
-                                color="primary"
-                            >История заказов</Button>
+
+                                <NavLink to="/admin" >
+                                    <Button
+                                        className="mr-2 ml-2"
+                                        variant="contained"
+                                        color="primary"
+                                    >добавить товар</Button>
+                                </NavLink>
+
+                            <NavLink to="/history" >
+                                <Button
+                                    variant="contained"
+                                    color="primary"
+                                >История заказов</Button>
+                                </NavLink>
+
+
                         </div>
                     </Container>
                 </div>
@@ -56,9 +65,12 @@ class App extends Component {
                     <Route path='/admin'
                            render={() => <Add_product/> }/>
 
+                    <Route path='/history'
+                           render={() => <History/> }/>
+
                 </Container>
 
-                <div className="bg-light d-flex align-items-center justify-content-center" style={{borderRadius: "5px 5px 0 0", marginTop: 15, height: 100}}>
+                <div className="bg-light d-flex align-items-center justify-content-center" style={{borderRadius: "5px 5px 0 0", marginTop: 15, height: 100, position: "sticky", bottom: 0, left: 0, right: 0}}>
                     <h1> © Lorem ipsum dolor</h1>
                 </div>
             </div>
