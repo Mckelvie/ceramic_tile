@@ -100,7 +100,6 @@ class App extends Component {
                        }}>
                            <h1> © Lorem ipsum dolor</h1>
                        </div>
-
                    </div>
                }
            </div>
