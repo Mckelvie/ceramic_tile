@@ -12,6 +12,7 @@ const useStyles = makeStyles({
 });
 
 const Tiles = (props) => {
+
     const classes = useStyles();
     const [state, setState] = useState({
         raised:false,
@@ -30,8 +31,8 @@ const Tiles = (props) => {
                         <img src={props.tile.image} style={{width: "100px"}}/>
                     </div>
                     <div>
-                        <Typography>{props.tile.name} {props.tile.description.size}</Typography>
-                        <div>Количество на складе: {props.tile.description.count} шт</div>
+                        <Typography>{props.tile.name} </Typography>
+                        <div>Количество на складе: {props.tile.count} шт</div>
                         <div>Цена за 1 шт: {props.tile.price} сом</div>
                     </div>
                     <div>
@@ -51,9 +52,12 @@ const Tiles = (props) => {
 }
 
 const Sales = (props) => {
-    const {warehouse} = props;
 
-    let tilesElements = warehouse.map(t => <Tiles tile={t}/>);
+    const {warehouse} = props;
+    const {products} = props;
+
+    let tilesElements = products.map(t => <Tiles tile={t}/>);
+
     return (
         <div className={"container my-5"}>
             <div className={"row"}>
