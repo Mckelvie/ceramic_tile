@@ -25,7 +25,7 @@ const Dashboard = () => {
                                        Количество проданных плит
                                    </Typography>
                                    <Typography variant="h6">
-                                       0
+                                       2500
                                    </Typography>
                                </CardContent>
                            </CardActionArea>
@@ -42,7 +42,7 @@ const Dashboard = () => {
                                        Общая выручка
                                    </Typography>
                                    <Typography variant="h6">
-                                       0
+                                       8000
                                    </Typography>
                                </CardContent>
                            </CardActionArea>
@@ -59,7 +59,7 @@ const Dashboard = () => {
                                         Количество заказов
                                     </Typography>
                                     <Typography variant="h6">
-                                        0
+                                        2
                                     </Typography>
                                 </CardContent>
                             </CardActionArea>

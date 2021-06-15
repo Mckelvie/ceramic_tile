@@ -96,9 +96,14 @@ class App extends Component {
                        <div className="bg-light d-flex align-items-center justify-content-center" style={{
                            borderRadius: "5px 5px 0 0",
                            marginTop: 15,
-                           height: 100,
+                           height: "auto",
                        }}>
-                           <h1> © Lorem ipsum dolor</h1>
+                           <div>
+                               <h4 style={{textTransform: "uppercase", margin: "10px 0"}}>магистерская диссертация</h4>
+                               <p>Группа: ИСТм-1-19</p>
+                               <p>Студент: Саитмамат кызы  Рысгул</p>
+                               <p>Тема: Информационные системы и технологии учета оптовых продаж дистрибьютора керамической плитки</p>
+                           </div>
                        </div>
                    </div>
                }
