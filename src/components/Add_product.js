@@ -8,7 +8,7 @@ class MyComponent extends Component {
         loading: false,
         name: null,
         count: null,
-        // file: null,
+        file: null,
         price: null
     }
 
@@ -30,7 +30,6 @@ class MyComponent extends Component {
                 id: uuidv4(),
                 name: this.state.name,
                 count: this.state.count,
-                //file: this.state.file,
                 price: +this.state.price,
             });
 
@@ -42,29 +41,17 @@ class MyComponent extends Component {
                 });
             }
 
-            alert('ok!');
+            alert('Товар добавлен успешно');
             console.log(item)
         } catch (e) {
             console.dir(e)
-            alert('error!');
+            alert('Произошла какая-то ошибка!');
         } finally {
             this.setState({ loading: false });
         }
     }
 
-    fix = () => {
-        this.products.add({
-            first: "Ada",
-            last: "Lovelace",
-            born: 1815
-        })
-            .then((docRef) => {
-                console.log("Document written with ID: ", docRef.id);
-            })
-            .catch((error) => {
-                console.error("Error adding document: ", error);
-            });
-    }
+
 
     render() {
         const inputs = {
@@ -76,25 +63,27 @@ class MyComponent extends Component {
             <div>
                 {
                     this.state.loading ? <div style={{margin: "150px auto"}}>Подождите пожалуйста..</div>
-                        :  <div className="d-flex flex-column align-items-center justify-content-center">
-                            <div style={div_inp}>
-                                <label>Название плитки:</label>
-                                <input style={inputs} onChange={(e) => this.setState({ name: e.target.value })} type="text"/>
-                            </div>
-                            <div style={div_inp}>
-                                <label>Количество плитки:</label>
-                                <input style={inputs} onChange={(e) => this.setState({ count: e.target.value })} type="number"/>
-                            </div>
-                            <div style={div_inp}>
-                                <label>Цена плитки:</label>
-                                <input style={inputs} onChange={(e) => this.setState({ price: e.target.value })} type="number"/>
-                            </div>
-                            <div style={div_inp}>
-                                <label>Картинка плитки:</label>
-                                <input style={inputs}  onChange={(e) => this.setState({ file: e.target.files[0] })} type="file"/>
-                            </div>
-                            <div style={div_inp}>
-                                <button onClick={()=>this.add()}>Add</button>
+                        :  <div className="d-flex flex-column align-items-center justify-content-center py-5">
+                            <div className="p-4" style={{borderRadius: 8, backgroundColor: 'hsla(120,37%,87%,0.94)'}}>
+                                <div style={div_inp}>
+                                    <label>Название плитки:</label>
+                                    <input style={inputs} onChange={(e) => this.setState({ name: e.target.value })} type="text"/>
+                                </div>
+                                <div style={div_inp}>
+                                    <label>Количество плитки:</label>
+                                    <input style={inputs} onChange={(e) => this.setState({ count: e.target.value })} type="number"/>
+                                </div>
+                                <div style={div_inp}>
+                                    <label>Цена плитки:</label>
+                                    <input style={inputs} onChange={(e) => this.setState({ price: e.target.value })} type="number"/>
+                                </div>
+                                <div style={div_inp}>
+                                    <label>Картинка плитки:</label>
+                                    <input style={inputs}  onChange={(e) => this.setState({ file: e.target.files[0] })} type="file"/>
+                                </div>
+                                <div style={div_inp}>
+                                    <button className={"btn btn-success w-100"}  disabled={!this.state.file} onClick={()=>this.add()}>Добавить</button>
+                                </div>
                             </div>
                         </div>
                 }
