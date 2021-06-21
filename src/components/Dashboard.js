@@ -11,7 +11,12 @@ import AssessmentIcon from '@material-ui/icons/Assessment';
 import PaymentIcon from '@material-ui/icons/Payment';
 import AssignmentIndIcon from '@material-ui/icons/AssignmentInd';
 
-const Dashboard = () => {
+const Dashboard = (props) => {
+
+    const slabs = props.slabs.count;
+    const orders = props.orders.count;
+    const total_revenues = props.total_revenues.sum;
+
     return (
         <Container>
             <Grid container className={"row"} style={{marginTop: 12, position: 'sticky', top: 0,  display: 'flex', justifyContent: 'space-around'}}>
@@ -25,7 +30,7 @@ const Dashboard = () => {
                                        Количество проданных плит
                                    </Typography>
                                    <Typography variant="h6">
-                                       2500
+                                       {slabs}
                                    </Typography>
                                </CardContent>
                            </CardActionArea>
@@ -42,7 +47,7 @@ const Dashboard = () => {
                                        Общая выручка
                                    </Typography>
                                    <Typography variant="h6">
-                                       8000
+                                       {total_revenues}
                                    </Typography>
                                </CardContent>
                            </CardActionArea>
@@ -59,7 +64,7 @@ const Dashboard = () => {
                                         Количество заказов
                                     </Typography>
                                     <Typography variant="h6">
-                                        2
+                                        {orders}
                                     </Typography>
                                 </CardContent>
                             </CardActionArea>

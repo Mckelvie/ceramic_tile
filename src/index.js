@@ -7,9 +7,7 @@ import { StrictMode } from "react";
 
 ReactDOM.render(
   <BrowserRouter>
-      <StrictMode>
-        <App />
-      </StrictMode>
+      <App/>
   </BrowserRouter>,
   document.getElementById('root')
 );

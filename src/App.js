@@ -2,37 +2,55 @@ import './App.css';
 import Dashboard from "./components/Dashboard";
 import Sales from "./components/Sales";
 import React, {Component} from "react";
-import data from "./data.json";
 import {Button, Container} from "@material-ui/core";
 import {NavLink, Route} from 'react-router-dom';
 import Add_product from "./components/Add_product";
 import History from "./components/history";
 import firebase from "./firebase";
+import Admissions from "./components/Admissions";
 
 
 class App extends Component {
     constructor() {
         super();
         this.state = {
-            warehouse: data.warehouse,
             products: [],
-            load: false
+            load: false,
+            total_revenues: {},
+            slabs: {},
+            orders: {}
         }
     }
 
-    componentDidMount() {
+     componentDidMount() {
         firebase.firestore().collection('products').get().then(s =>{
             this.setState({
                 products: s.docs.map(v => {
-                    return v.data();
+                    return {
+                        ...v.data(),
+                        original_id: v.id,
+                    };
                 })
-            })
+             })
         });
-        console.log(this.state.products);
-    }
 
-    fix = () => {
-        console.log(this.state.products)
+         firebase.firestore().collection('number_of_slabs_sold').doc('slabs').get().then(s =>{
+             this.setState({
+                 slabs: s.data()
+             })
+         });
+
+         firebase.firestore().collection('total_revenues').doc('proceeds').get().then(s =>{
+             this.setState({
+                 total_revenues: s.data()
+             })
+         });
+
+         firebase.firestore().collection('orders').doc('order').get().then(s =>{
+             this.setState({
+                 orders: s.data()
+             })
+         });
     }
 
     render() {
@@ -40,6 +58,7 @@ class App extends Component {
            <div>
                {
                    this.state.load ? "Loading!" : <div style={{margin: "0 150px"}}>
+
                        <div className="bg-light py-2 mb-2" style={{
                            borderRadius: "0 0 5px 5px",
                            position: "sticky",
@@ -81,12 +100,15 @@ class App extends Component {
                            <Route path='/' exact
                                   render={() =>
                                       <div>
-                                          <Dashboard/>
-                                          <Sales warehouse={this.state.warehouse} products={this.state.products}/>
+                                          <Dashboard total_revenues={this.state.total_revenues} slabs={this.state.slabs} orders={this.state.orders}/>
+                                          <Sales state={this.state} products={this.state.products} />
                                       </div>}/>
 
                            <Route path='/admin'
                                   render={() => <Add_product/>}/>
+
+                           <Route path='/real'
+                                  render={() => <Admissions/>}/>
 
                            <Route path='/history'
                                   render={() => <History/>}/>

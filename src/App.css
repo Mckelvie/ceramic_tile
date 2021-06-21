@@ -1,5 +1,7 @@
 .App {
   text-align: center;
+  background-image: url("https://i0.photo.2gis.com/images/branch/0/30258560051383920_d45a_600x600.jpg");
+  background-size: cover;
 }
 
 body{
