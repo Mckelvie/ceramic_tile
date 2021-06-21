@@ -101,7 +101,7 @@ class App extends Component {
                                   render={() =>
                                       <div>
                                           <Dashboard total_revenues={this.state.total_revenues} slabs={this.state.slabs} orders={this.state.orders}/>
-                                          <Sales products={this.state.products} />
+                                          <Sales state={this.state} products={this.state.products} />
                                       </div>}/>
 
                            <Route path='/admin'

@@ -15,7 +15,7 @@ const useStyles = makeStyles({
 });
 
 const Tiles = (props) => {
-
+    debugger
     const classes = useStyles();
     const [state, setState] = useState({
         raised:false,
@@ -41,7 +41,19 @@ const Tiles = (props) => {
                 });
             }
 
-            const d = await db.collection('orders').where('count', '==', 'order').get();
+            const d = await db.collection('orders').doc('order').set({
+                count: +props.state.orders.count + 1
+            })
+
+            const er = await db.collection('number_of_slabs_sold').doc('slabs').set({
+                count: +props.state.slabs.count + order
+            })
+
+            const rtx = await db.collection('total_revenues').doc('proceeds').set({
+                sum: +props.state.total_revenues.sum + (order + props.tile.price) - 1
+            })
+
+
 
             console.log(d);
             props.handleShow();

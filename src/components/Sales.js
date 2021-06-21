@@ -11,7 +11,7 @@ function Sales(props) {
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
 
-    let tilesElements = products.map(t => <Tiles handleShow={handleShow} key={t.id} tile={t}/>);
+    let tilesElements = products.map(t => <Tiles state={props.state} handleShow={handleShow} key={t.id} tile={t}/>);
     return (
         <div className={"contwainer my-5"}>
             <div className={"row"}>
